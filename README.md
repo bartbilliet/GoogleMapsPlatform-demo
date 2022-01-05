@@ -19,4 +19,4 @@ Display [historic temperatures from NOAA public data](https://console.cloud.goog
 5. **[Customizing map-results based on external input](5_TemperatureHeatmapFromBigQueryOnMapWithExternalInput)**<br />
 Similar to the previous sample, mapping data from BigQuery on the Google Maps Platform, although now we take external input from a dropdown to customize the results. Users can now choose the timeframe being displayed.<br />
 Side-note: for now we re-render the entire map and ask the user to make a new selection after updating the month, as we don't keep a reference to the last recentangle drawn by the user.<br /><br />
-![Screenshot](5_TemperatureHeatmapFromBigQueryOnMapWithExternalInput\5_TemperatureHeatmapFromBigQueryOnMapWithExternalInput-Screenshot.PNG)
+![Screenshot](5_TemperatureHeatmapFromBigQueryOnMapWithExternalInput/5_TemperatureHeatmapFromBigQueryOnMapWithExternalInput-Screenshot.PNG)
