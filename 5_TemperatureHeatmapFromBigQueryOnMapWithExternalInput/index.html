@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Scoped heatmap example</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="mapstyle.css">
+    <script type="text/javascript" src="mapinteraction.js"></script>
+  </head>
+  <body>
+    <h2>Worldwide maximum temperatures in 2015</h2>
+    Select which <strong>month</strong> in the year 2015 you would like to view, and then <strong>draw a rectangle area</strong> on the map to fetch results for: 
+    <select id="month" onchange="initMap()">
+      <option value="1" selected="selected">January</option>
+      <option value="2">February</option>
+      <option value="3">March</option>
+      <option value="4">April</option>
+      <option value="5">May</option>
+      <option value="6">June</option>
+      <option value="7">July</option>
+      <option value="8">August</option>
+      <option value="9">September</option>
+      <option value="10">October</option>
+      <option value="11">November</option>
+      <option value="12">December</option>
+    </select>
+    <br /><br />
+
+    <!--The div element for the map. We will attach the map via the JS above -->
+    <div id="map"></div>
+
+    <!-- LOADING SPINNER -->
+    <img id="spinner" class="fade" src="img/loader.gif">
+    <!-- MENU -->
+    <div id="menu">
+        <div id="stats">
+            <h3>Statistics:</h3>
+            <table>
+                <tr>
+                    <td>Total Locations:</td><td id="rowCount"> - </td>
+                </tr>
+                <tr>
+                    <td>Query Execution:</td><td id="duration"> - </td>
+                </tr>
+                <tr>
+                    <td>Data Processed:</td><td id="bytes"> - </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- MENU END -->
+
+    <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
+    <!-- Note that we load the visualization & drawing library here in the querystring, for allowing the user to draw an area on the map & displaying heatmaps in that area -->
+    <script src="https://maps.googleapis.com/maps/api/js?libraries=visualization,drawing&key=[Your-Api-Key]" async defer></script>
+    
+    <!-- You will use the Google Client API for Javascript to run queries against BigQuery. -->
+    <script src="https://apis.google.com/js/client.js"></script>
+    
+    <!-- The end user of the application needs to authorize the application to access data in BigQuery on their behalf.
+         The Google Client API for JavaScript handles the OAuth logic to do this. -->
+    <script type="text/javascript">
+      gapi.load('client:auth', authorize);
+    </script>
+  </body>
+</html>
